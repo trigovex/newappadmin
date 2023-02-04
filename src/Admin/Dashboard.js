@@ -75,7 +75,7 @@ function Dashboard(){
      const token = await    localStorage.getItem("token")
      console.log("Dashboard = "+token)
      
-   fetch('https://sore-ruby-scarab-boot.cyclic.app/GetAdmin',{
+   fetch(Ip+'/GetAdmin',{
    headers:new Headers({
      Authorization:"Bearer "+token,
      'Content-Type': 'application/json',

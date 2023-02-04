@@ -72,7 +72,7 @@ const [Screen,setScreen] = useState(1);
         <div className='text-center col-12'>
             <img className='img-fluid' src={Chef}  style={{overflow:"hidden"}} width="220" />
         </div>
-         <p  style={{fontSize:25,fontWeight:'bold',textAlign:'center'}}>My HomeDel</p>
+         <p  style={{fontSize:25,fontWeight:'bold',textAlign:'center'}}>INFA DELIVERY</p>
     </div>
 
     <div className='row'>
