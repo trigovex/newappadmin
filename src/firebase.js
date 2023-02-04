@@ -12,8 +12,8 @@ const firebaseConfig = {
   projectId: "myhomedel-e9588",
   storageBucket: "myhomedel-e9588.appspot.com",
   messagingSenderId: "374547844662",
-  appId: "1:374547844662:web:a62f0d8ff36a35dfad9297",
-  measurementId: "G-J0QEEPHXPR"
+  appId: "1:374547844662:web:4dd9a9b62998a618ad9297",
+  measurementId: "G-KGTQTNHGL1"
 };
 
 // Initialize Firebase
