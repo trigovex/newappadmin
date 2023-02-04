@@ -1,0 +1,10 @@
+.review_rating{
+    background-color: green;
+    color: white;
+    padding: 8px;
+    border-radius: 12px;
+}
+.review_rating_somethig{
+    font-size:14px;
+    text-decoration: underline;
+}

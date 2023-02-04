@@ -1,0 +1,15 @@
+.main {
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+  }
+  
+  .main .title {
+    margin-top: 150px;
+    color: #383127;
+    font-size: 50px;
+    font-weight: bold;
+  }
+  
+  .main .subtitle{
+    margin-top: 50px;
+  }

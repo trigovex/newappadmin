@@ -1,0 +1,57 @@
+.page{
+  background: linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.2)),url('https://thumbs.dreamstime.com/b/greek-food-background-traditional-different-dishes-top-view-close-up-153149838.jpg');
+ background-size: cover;
+ height: 100vh;
+ margin: 0;
+}
+.pro_img{
+  border-radius: 30%;
+  background-color: black;
+}
+.pro_details{
+  background-color: rgba(230, 233, 206,0.4);
+  backdrop-filter: blur(5px);
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.pro_links{
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.m_{
+  overflow-y: scroll;
+  height: 80vh;
+  padding: 0;
+  backdrop-filter: blur(5px);
+}
+.m_::-webkit-scrollbar {
+width: 10px;
+}
+.m_::-webkit-scrollbar-track {
+background: rgba(255, 255, 255, 0.5); 
+}
+
+/* Handle */
+.m_::-webkit-scrollbar-thumb {
+background: rgba(255, 166, 0, 0.2); 
+}
+
+/* Handle on hover */
+.m_::-webkit-scrollbar-thumb:hover {
+background: rgba(255, 166, 0, 0.5); 
+}
+
+
+.profile_edit_{
+  width: 100%;
+  background-color: rgba(255, 166, 0, 0.2);
+  padding: 10px 25px;
+  border: none;
+}
+.profile_edit_:hover{
+  background-color: rgba(255, 166, 0, 0.25);
+}
+.profile_edit_:focus{
+  outline: none;
+  border-bottom: 1px solid rgba(255, 166, 0, 0.5);
+}

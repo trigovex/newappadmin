@@ -1,0 +1,55 @@
+.header_{
+    height: auto;
+    background-image:linear-gradient(rgba(0, 0, 0, 0.8),rgba(0, 0, 0, 0.5)) , url('https://images.travelandleisureindia.in/wp-content/uploads/2019/12/Indian-But-Not-Indian-Food-feature.jpg');
+    background-size: cover;
+    padding-bottom: 100px;
+}
+.brand_{
+    color: white;   
+}
+.header_search_ button{
+    background-color: white;
+    border: none;
+    padding: 4px;
+    border-right: 1px solid black;
+}
+
+.sec_one_card{
+    border-radius: 15px;
+    transition: 0.6s;
+}
+.sec_one_card:hover{
+    transform: scale(1.05);
+    cursor: pointer;
+}
+.sec_two_card{
+    color: white;
+    height: 40vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.0),rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.8)) , url('https://www.oberoihotels.com/-/media/oberoi-hotels/website-images/the-oberoi-bengaluru/dining/spotlight/mobile/tobl-terrace-dining_414x580.jpg');
+    background-size: cover;
+    border-radius: 5px;
+    transition: 0.6s;
+}
+.sec_two_card:hover{
+    cursor: pointer;
+}
+.location_cards{
+    transition: 0.6s;
+}
+.location_cards:hover{
+    box-shadow: 0 0  5px 0 lightgray;
+    cursor: pointer;
+}
+.footer_icon_parent{
+    display: flex;
+    justify-content: space-between;
+}
+.footer_icons{
+    border-radius: 15px;
+    color: white;
+    background-color: black;
+    padding: 5px;
+}
+.footer_icons:hover{
+    cursor: pointer;
+}

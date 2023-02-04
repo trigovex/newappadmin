@@ -1,0 +1,6 @@
+.cat_card_hov{
+    transition: 0.6s;
+}
+.cat_card_hov:hover{
+    transform: scale(1.15);
+}
