@@ -173,7 +173,7 @@ if(UserData){
       
       : <div>
 
-      <h1>Admin error:- your are not an admin and you don't have any credential in this website . Please contact our Admins to get Access (eswarpavan5237@gmail.com)</h1>
+      <h1>Admin error:- your are not an admin and you don't have any credential in this website . Please contact our Admins to get Access (contact@trigovex.com)</h1>
       <button onClick={logout}>go back</button>
       </div>
 
