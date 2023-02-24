@@ -133,7 +133,7 @@ const [Price,setPrice]=useState(props.data.Price);
     const DeleteItem=()=>{
         fetch(Ip+'/deleteCharges?id='+props.Data._id,{
             headers:new Headers({
-              Authorization:"Bearer " 
+              Authorization:"Bearer" 
             })
             }).then(res=>res.json())
             .then(data=>{ 
