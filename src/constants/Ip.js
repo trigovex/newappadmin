@@ -1,4 +1,4 @@
-export const Ip = "https://vast-ruby-duck-wrap.cyclic.app";
+export const Ip = "https://wild-red-beetle-gear.cyclic.app";
 
 
 

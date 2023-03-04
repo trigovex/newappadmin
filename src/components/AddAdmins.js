@@ -40,7 +40,7 @@ const[MainItems,setMainItems]=useState("");
          })
         })
         .then(res=>{
-          
+         AddMenu(email) 
           alert("Admin created..")
           setAddress("");
           setName("");
@@ -56,7 +56,27 @@ else{
   alert("All Fields  are Required...")
 }
     }
-
+    const AddMenu=(ID)=>{
+      var today = new Date()
+ 
+   var curTime = today.getHours() + ':' + today.getMinutes() + ':' + today.getSeconds();
+    var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+      fetch(Ip+"/AddMenu",{
+        method:"POST",
+        headers: {
+         'Content-Type': 'application/json'
+       },
+       body:JSON.stringify({
+        "AdminId":ID,
+        "MenuList":[],
+        "UpdatedData":date,
+        "UpdatedTime":curTime,
+        "Temp":[]
+       })
+      })
+      .then(res=>res.json())
+       
+    }
     const [ShopType,setShopType] =useState("Restaurant");
   return (
      <>
@@ -92,6 +112,7 @@ else{
                   <a class="dropdown-item"  onClick={()=>setShopType("Tiffin Center")}>Tiffin Center</a>
                   <a class="dropdown-item"  onClick={()=>setShopType("General Stores")}>General Stores</a>
                   <a class="dropdown-item"  onClick={()=>setShopType("Dairy Stores")}>Dairy Stores</a>
+                  <a class="dropdown-item"  onClick={()=>setShopType("Food Court")}>Food Court</a>
                 </div>
                       
           </div>

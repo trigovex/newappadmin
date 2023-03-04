@@ -1,6 +1,5 @@
 import React,{useEffect,useState} from 'react'
 
-
 import { Player, Controls } from '@lottiefiles/react-lottie-player';
 
 import {useNavigate} from "react-router-dom";

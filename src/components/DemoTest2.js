@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React, { useState } from "react";
+import React, { useState,useEffect} from "react";
 import { Ip } from './../constants/Ip';
 
 
@@ -10,7 +10,32 @@ import { ref, getDownloadURL, uploadBytesResumable } from "firebase/storage";
 import {Helmet} from "react-helmet";
 
 function DemoTest2(props) {
-
+  const [Data,setData] = useState()
+  //console.log("hhhg")
+   const  GetData = async ()=>{
+      
+      
+    fetch(Ip+'/GetMenu?Id='+props.id,{
+    
+    }).then(res=>res.json())
+    
+    .then(data=>{ 
+    
+       
+      setData(data[0].MenuList);
+ 
+      
+          console.log("admin data  = = ",data[0].MenuList);
+     
+    }
+    )
+   }
+     
+ useEffect(()=>{
+  
+   GetData();
+ 
+ },[])
   let user = auth.currentUser;
   const [imgUrl, setImgUrl] = useState(null);
   const [progresspercent, setProgresspercent] = useState(0);
@@ -207,15 +232,16 @@ function DemoTest2(props) {
                     {Type}
                   </a>
 
-                  <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                        <li><a class="dropdown-item"  onClick={()=>setType("Rice")}>Rice</a></li>
-                                        <li><a class="dropdown-item"   onClick={()=>setType("Biryani")}>Biryani</a></li>
-                                        <li><a class="dropdown-item"   onClick={()=>setType("Ice Cream")}>Ice Cream</a></li>
-                                        <li><a class="dropdown-item"   onClick={()=>setType("Curry")}>Curry</a></li>
-                                        <li><a class="dropdown-item"   onClick={()=>setType("Bakery")}>Bakery</a></li>
-                                        <li><a class="dropdown-item"   onClick={()=>setType("Juice")}>Juice</a></li>
-                                        <li><a class="dropdown-item"   onClick={()=>setType("Starters")}>Starters</a></li>
-                  </ul>
+                  {
+                    Data?<ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    {Data.map((data,i)=>(
+                                          <li><a class="dropdown-item"  onClick={()=>setType(data)}>{data}</a></li>
+                                        ))
+  
+                                        }
+                                          
+                    </ul>:null
+                  }
                 </div>
                             
                 </div>
