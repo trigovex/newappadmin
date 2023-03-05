@@ -1,5 +1,6 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable no-unused-vars */
-import React, { useState,useEffect} from "react";
+import React, { useState,useEffect } from "react";
 import { Ip } from './../constants/Ip';
 
 
@@ -8,34 +9,10 @@ import { getDatabase, set ,push,child,onValue} from "firebase/database";
 import { storage ,databaseref,app,auth,database} from '../firebase';
 import { ref, getDownloadURL, uploadBytesResumable } from "firebase/storage";
 import {Helmet} from "react-helmet";
+import MenuCard from "./MenuCard";
 
 function DemoTest2(props) {
-  const [Data,setData] = useState()
-  //console.log("hhhg")
-   const  GetData = async ()=>{
-      
-      
-    fetch(Ip+'/GetMenu?Id='+props.id,{
-    
-    }).then(res=>res.json())
-    
-    .then(data=>{ 
-    
-       
-      setData(data[0].MenuList);
- 
-      
-          console.log("admin data  = = ",data[0].MenuList);
-     
-    }
-    )
-   }
-     
- useEffect(()=>{
-  
-   GetData();
- 
- },[])
+
   let user = auth.currentUser;
   const [imgUrl, setImgUrl] = useState(null);
   const [progresspercent, setProgresspercent] = useState(0);
@@ -183,6 +160,42 @@ function DemoTest2(props) {
 
  console.log("veg or non =  ",VegOrNon);
  console.log("Type = ",Type);
+
+ const AdminId="myhomedelsuperadmin@gmail.com";
+
+const [_id,set_id]=useState();
+ const [Data,setData] = useState()
+ //console.log("hhhg")
+  const  GetData = async ()=>{
+     
+     
+   fetch(Ip+'/GetMenu?Id='+props.id,{
+   
+   }).then(res=>res.json())
+   
+   .then(data=>{ 
+   
+      
+     setData(data[0].MenuList);
+set_id(data[0]._id)
+     
+         console.log("admin data  = = ",data[0].MenuList);
+    
+   }
+   )
+  }
+    
+useEffect(()=>{
+ 
+  GetData();
+
+},[])
+
+
+
+
+const [screen,setscreen] =useState(0);
+
   return (
     <div className="container">
      <Helmet>
@@ -201,14 +214,16 @@ function DemoTest2(props) {
         <br />
         <button type="submit">Add Item</button>
       </form>*/}
-      <form onSubmit={onSubmitHandler}> 
+     <>
+      {screen===0?
+        <>
+        <form onSubmit={onSubmitHandler}> 
       <div class="container" >
             <div class="row">
               <div class="col-md-12 text-center">
                 <h2>New Items</h2>
               </div>
             </div>
-
 
             <div className="col-12">
 
@@ -224,6 +239,7 @@ function DemoTest2(props) {
                   <li><a class="dropdown-item"   onClick={()=>setVegOrNon("Non Veg")}>Non Veg</a></li>
                 </ul>
               </div>
+
              </div>
           
                 <div class="dropdown  col-12 mt-3 ">
@@ -232,19 +248,18 @@ function DemoTest2(props) {
                     {Type}
                   </a>
 
-                  {
-                    Data?<ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                    {Data.map((data,i)=>(
-                                          <li><a class="dropdown-item"  onClick={()=>setType(data)}>{data}</a></li>
-                                        ))
-  
-                                        }
-                                          
-                    </ul>:null
-                  }
+                  {Data?<ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                      {Data.map((data,i)=>(
+                                        <li><a class="dropdown-item"  onClick={()=>setType(data)}>{data}</a></li>
+                                      ))
+
+                                      }
+                                        
+                  </ul>:null}
                 </div>
                             
                 </div>
+                <button className="btn btn-primary mt-3 ml-3" onClick={()=>setscreen(1)} >Update Menu</button>
             </div>
         
 
@@ -290,6 +305,10 @@ function DemoTest2(props) {
        
         <button type='submit' class="btn btn-outline-primary text-center" >Submit</button>
       </form>
+        </>:<MenuCard AdminId={props.id} _id={_id}/>
+
+      }
+     </>
     </div>
   );
 }
